@@ -1,0 +1,72 @@
+.donation-container {
+    background-color: rgb(245, 245, 245);
+    height: 100vh; /* Set the height to 100vh (viewport height) */
+    width: 100%; /* Set the width to 100% to fill the entire width */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide content that overflows the container */
+}
+
+.top-bar {
+    background-color: white;
+    border-radius: 10px;
+    height: 100px;
+    margin-left: 215px;
+    box-shadow: 2px 2px 5px lightgray;
+    /* Horizontal and vertical offset are 0, blur radius is 6px */
+}
+
+.donations-card {
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 10px;
+    width: 40%;
+    height: 80%;
+    margin-left: 215px;
+    box-shadow: 2px 2px 5px lightgray;
+}
+
+.donations-title {
+    padding-top: 10px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.donations-count {
+    margin-top: -10px;
+    margin-left: 20px;
+    font-size: 12px;
+    color: rgb(163, 163, 163);
+    display: flex;
+    /* Use flexbox layout */
+    align-items: center;
+}
+
+.tick-icon {
+    color:rgb(163, 163, 163);
+}
+
+
+.donations-count svg {
+    margin-right: 5px;
+    /* Add some spacing between the icon and text */
+}
+
+.donation-table {
+    display: table; /* Change the display property to 'table' */
+    table-layout: fixed; /* Set table layout to 'fixed' */
+    width: 100%; /* Set the table's width to 100% */
+    text-align: center;
+}
+
+.donation-table th {
+    width: 33.33%; /* Divide equally between the three columns (adjust as needed) */
+    color: rgb(186, 186, 186);
+    font-size: 12px;
+}
+
+.donation-table th:first-child {
+    width: 50px;
+    /* Adjust the width as needed */
+}

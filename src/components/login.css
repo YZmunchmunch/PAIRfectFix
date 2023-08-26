@@ -1,0 +1,55 @@
+.login-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245)
+}
+
+.login-container {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.left-content {
+  flex: 1; /* Occupy 50% of the container width */
+  padding: 20px; /* Add padding for spacing */
+  text-align: center; /* Center the text horizontally */
+  background-color: rgb(229, 229, 229);
+  height: fill;
+}
+
+.right-content {
+  flex: 1; /* Occupy 50% of the container width */
+  padding: 20px; /* Add padding for spacing */
+}
+
+.login-card {
+    border-style: none;
+}
+
+.email,
+.password {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow properties as needed */
+  padding: 15px; /* Add some padding for spacing */
+  background-color: white; /* Set the background color to white */
+  border-radius: 5px; /* Add rounded corners to the form groups */
+  border-style: solid;
+  border-color: rgb(245, 245, 245);
+}
+
+.email-entry,
+.password-entry {
+    border-style: none;
+}
+
+.login-button {
+    background-color: grey;
+    border-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow properties as needed */
+}

@@ -1,0 +1,16 @@
+.layout {
+  display: flex;
+}
+
+/* Style for the sidebar */
+.sidebar {
+  flex: 0 0 250px; /* Sidebar width */
+  background-color: #333; /* Sidebar background color */
+  color: white; /* Text color */
+}
+
+/* Style for the content area */
+.content {
+  flex: 1; /* Take up remaining space */
+  padding: 20px; /* Optional padding for content area */
+}

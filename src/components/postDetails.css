@@ -1,0 +1,57 @@
+
+.details-container {
+    background-color: rgb(245, 245, 245);
+    padding: 10px;
+    width: auto;
+}
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+.comment {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.face-icon {
+    margin-right: 10px;
+}
+
+.details-issue {
+    display: flex; /* Use flexbox layout */
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.details-issue svg {
+    margin-right: 8px;
+    /* Add some spacing between the icon and text */
+}
+
+.details-deviceType {
+    margin-left: 10px;
+}
+
+.details-deviceModel {
+    margin-left: 10px;
+}
+
+.details-img {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    max-width: 100%; /* Adjust this value if needed */
+    max-height: 500px; /* Set your desired maximum height */
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
