@@ -15,24 +15,102 @@ import ArrowCircleUpOutlinedIcon from '@mui/icons-material/ArrowCircleUpOutlined
 import BugReportSharpIcon from '@mui/icons-material/BugReportSharp';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 import { BiShare } from "react-icons/bi";
 import { BiSave } from "react-icons/bi";
 
+function CustomMultipleSelect({ options, selectedOptions, setSelectedOptions }) {
+  const toggleOption = (option) => {
+    if (selectedOptions.includes(option)) {
+      setSelectedOptions(selectedOptions.filter((item) => item !== option));
+    } else {
+      setSelectedOptions([...selectedOptions, option]);
+    }
+  };
+
+  return (
+    <div>
+      {options.map((option) => (
+        <label
+          key={option}
+        >
+          <input
+            type="checkbox"
+            value={option}
+            checked={selectedOptions.includes(option)}
+            onChange={() => toggleOption(option)}
+            style={{ marginRight: '10px' }}
+            className="custom-checkbox"
+          />
+          {option}
+        </label>
+      ))}
+      <p className="filtered-options-display">Filtered: <p>{selectedOptions.join(', ')}</p></p>
+    </div>
+  );
+}
+
+
+    
 export default function Forum() {
     const { currentUser, logout } = useAuth();
     // Get all the forms submitted by the user
     const [forms, setForms] = useState([]);
     const [upvotes, setUpvotes] = useState({}); // Use an object to store upvotes for each form
-
     // Id of post clicked
     const [selectedId, setSelectedId] = useState(null);
-
     const [endPoint, setEndPoint] = useState('')
     const [search, setSearch] = useState('')
     const [filteredForms, setFilteredForms] = useState([])
-
     const [error, setError] = useState('')
+    // For filtering side bar
+    const deviceTypeOptions = ['Laptop', 'Desktop', 'Mobile Device', 'Monitor', 'Speaker', 'TV', 'Headset', 'Earpiece', 'Console', 'Smartwatch'];
+    const deviceModelOptions = ['Apple', 'Samsung', 'Google', 'XiaoMi', 'Oppo', 'Razer', 'Dell', 'Acer', 'Prism', 'Ducky'];
+    const [filterType, setFilterType] = useState([])
+    const [filterBrand, setFilterBrand] = useState([])
+    const [filterIssue, setFilterIssue] = useState('')
+
     const navigate = useNavigate()
+
+    async function getFilteredPosts() {
+        const formCollectionRef = collection(db, 'UserForm');
+        const querySnapshot = await getDocs(formCollectionRef);
+
+        // Convert the query snapshot into an array of form objects
+        const allForms = querySnapshot.docs.map((doc) => ({
+            data: doc.data(),
+            id: doc.id,
+        }));
+
+        const filtered = allForms.filter((form) => {
+            // Define a function to check if an array is empty
+            const isNonEmptyArray = (arr) => Array.isArray(arr) && arr.length > 0;
+
+            // Check if filterType and filterModel have selected options
+            const filterTypeCondition = isNonEmptyArray(filterType)
+                ? filterType.some((type) => form.data.DeviceType.includes(type))
+                : true; // If filterType is empty, consider it as true
+
+            const filterBrandCondition = isNonEmptyArray(filterBrand)
+                ? filterBrand.some((brand) => form.data.DeviceModel.includes(brand))
+                : true; // If filterModel is empty, consider it as true
+
+            // Combine the conditions using logical AND
+            return filterTypeCondition && filterBrandCondition;
+            })
+        .sort((a, b) => {
+            // Compare the Upvotes property in descending order
+            return b.data.Upvotes - a.data.Upvotes;
+        });
+        console.log(filtered)
+        setFilteredForms(filtered); // Update the filtered forms
+    }
+
+    const handleFilterSubmit = (e) => { 
+        e.preventDefault();
+        getFilteredPosts();
+
+    }
 
     const onChangeHandler = (e) => {
         setEndPoint(e.target.value);
@@ -233,12 +311,19 @@ export default function Forum() {
                                 <button type="button" onClick={() => getDetail(form.id)} className="details-button" data-bs-toggle="modal" data-bs-target="#detailsModal" key={form.id}>
                                     <div className="post-container">
                                         <div className="post-details">
-                                            <p className="post-issue"><BugReportSharpIcon style={{ fontSize: '20px' }} />{form.data.Issue}</p>
-                                            <p className={`post-${form.data.PostType === 'Issue' ? 'postIssue' : form.data.PostType === 'Solution' ? 'postSolution' : 'postOthers'}`}>{form.data.PostType}</p>
-                                            {form.data.Image && <img className="img-issue" src={form.data.Image} alt="Issue" />}
+                                            <div className='post-header'>
+                                                <div className='post-header-words'>
+                                                    <h4 className="post-issue">{form.data.Issue}</h4>
+                                                    <p className={`post-${form.data.PostType === 'Issue' ? 'postIssue' : form.data.PostType === 'Solution' ? 'postSolution' : 'postOthers'}`}>{form.data.PostType}</p>
+                                                    <p className="post-deviceModel">Model: { form.data.DeviceModel }</p>
+                                                    <p className="post-deviceType">Type: {form.data.DeviceType}</p>
+                                                </div>
+                                                <div className='image-container'>{form.data.Image && <img className="img-issue" src={form.data.Image} alt="Issue" />}</div>
+                                                
+                                            </div>
+                                            
                                             <p className="post-description-forum"> {form.data.Description}</p>
-                                            <p className="post-deviceModel">Model: { form.data.DeviceModel }</p>
-                                            <p className="post-deviceType">Type: {form.data.DeviceType}</p>
+                                           
                                             <div className='post-footer-container'>
                                             	<p className="post-comment-count"><ModeCommentOutlinedIcon style={{ fontSize: '15px', marginRight: '5px' }} />{ form.data.CommentCount } Comments</p>
 												<p className='post-comment-count' ><BiShare style={{ fontSize: '15px', marginRight: '5px' }} />Share</p>
@@ -251,13 +336,29 @@ export default function Forum() {
                         ))}
                     </div>
                     <div className='filter-container'>
-                        placeholder
-                        placeholder
-                        placeholder
-                        placeholder
-                        placeholder
-                        placeholder
-                        placeholder
+                        <form onSubmit={handleFilterSubmit}>
+                            <div className="form-group mt-2">
+                                <label className="filterForm-filterType control-label" htmlFor="filterType">Device Type</label>
+                                <CustomMultipleSelect
+                                    options={deviceTypeOptions}
+                                    selectedOptions={filterType}
+                                    setSelectedOptions={setFilterType}
+                                />
+                            </div>
+                            <div className="form-group mt-2">
+                                <label className="filterForm-filterModel control-label" htmlFor='filterModel'> Device Brand </label>
+                                <CustomMultipleSelect
+                                    options={deviceModelOptions}
+                                    selectedOptions={filterBrand}
+                                    setSelectedOptions={setFilterBrand}
+                                />
+                            </div>
+                            <div className="form-group mt-3">
+                                <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '10px' }}>
+                                    <button type="submit" className="filter-button btn btn-success"><FilterAltOutlinedIcon /></button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

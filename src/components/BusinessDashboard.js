@@ -52,7 +52,7 @@ export default function BusinessDashboard() {
                     <div className="modal-body"> 
                         <AddBusiness />
                     </div>
-                    <div className="modal-footer">
+                    <div className="modal-footer ml-50">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>

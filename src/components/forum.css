@@ -14,6 +14,34 @@
     align-items: center;
 }
 
+.post-header {
+    display: flex;
+}
+
+.post-header-words {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    padding: 5px;
+    margin: 2px;
+}
+
+.image-container {
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.img-issue {
+    height: auto;
+    width: auto;
+}
+
 .post-vote {
     display: flex;
     flex-direction: column;
@@ -123,35 +151,33 @@
 }
 
 .forum-container {
-    overflow: auto;
+    display: flex;
 }
 
 .forum-posts {
     margin-top: 100px;
     margin-left: 218px;
     border-radius: 10px;
-    display: flex;
 }
 
 .scrollable-content {
     padding: 1rem;
 }
 
-.img-issue {
-    height: 300px;
-    width: fill;
-    border-radius: 10px;
-    display: flex;
-    /* Use flexbox layout */
-    align-items: center;
+.filter-container {
+    position: fixed;
+    display: block;
     justify-content: center;
-    max-width: 100%;
-    /* Adjust this value if needed */
-    max-height: 300px;
-    /* Set your desired maximum height */
-    width: auto;
-    height: auto;
-
+    right: 100px;
+    top: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px lightgray;
+    width: 14%;
+    height: 85%;
+    padding-left: 20px;
+    overflow: auto;
 }
 
 .post-issue {
@@ -170,10 +196,12 @@
 
 .post-deviceModel {
     margin-left: 10px;
+    font-weight: 500;
 }
 
 .post-deviceType {
     margin-left: 10px;
+    font-weight: 500;
 }
 
 .post-comment-count {
@@ -187,32 +215,62 @@
 
 }
 
-
-
 .post-postSolution {
-    margin-top: 10px;
-    margin-left: 14px;
     background-color: greenyellow;
     border-radius: 20px;
-    width: 10%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin-left: 8px;
+    color: white;
 }
 
 .post-postIssue {
-    margin-top: 10px;
-    margin-left: 14px;
     background-color: rgb(255, 133, 19);
     border-radius: 20px;
-    width: 10%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin-left: 8px;
+    color: white;
 }
 
 .post-postOthers {
-    margin-top: 10px;
-    margin-left: 14px;
-    background-color: rgb(255, 133, 19);
+    background-color: rgb(0, 247, 255);
     border-radius: 20px;
-    width: 10%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin-left: 8px;
+    color: white;
 }
 
 .post-description-forum {
     margin-left: 10px;
+    color: var(--darkgrey);
+}
+
+.filterForm-filterType,
+.filterForm-filterModel {
+    font-weight: bold;
+}
+
+label {
+  display: block; /* Ensures each label is on a new line */
+}
+
+.checkbox-custom:checked {
+  background-color: rgb(255, 133, 19); /* Change to the color you want */
+  border-color: rgb(255, 133, 19); /* Change to the color you want */
+}
+
+.filter-button {
+    background-color: rgb(255, 133, 19);
+    border-style: none;
+    margin-bottom: 10px;
+}
+
+.filtered-options-display {
+    color: rgb(178, 178, 178);
+    font-size: 11px;
 }
