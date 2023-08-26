@@ -15,6 +15,8 @@ import ArrowCircleUpOutlinedIcon from '@mui/icons-material/ArrowCircleUpOutlined
 import BugReportSharpIcon from '@mui/icons-material/BugReportSharp';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import ModeCommentOutlinedIcon from '@mui/icons-material/ModeCommentOutlined';
+import { BiShare } from "react-icons/bi";
+import { BiSave } from "react-icons/bi";
 
 export default function Forum() {
     const { currentUser, logout } = useAuth();
@@ -58,7 +60,9 @@ export default function Forum() {
             return (
                 form.data.Issue.toLowerCase().includes(lowercaseSearch) ||
                 form.data.DeviceModel.toLowerCase().includes(lowercaseSearch) ||
-                form.data.DeviceType.toLowerCase().includes(lowercaseSearch)
+                form.data.DeviceType.toLowerCase().includes(lowercaseSearch) ||
+                form.data.Description.toLowerCase().includes(lowercaseSearch) ||
+                form.data.PostType.toLowerCase().includes(lowercaseSearch)
             );
         })
         .sort((a, b) => {
@@ -229,16 +233,31 @@ export default function Forum() {
                                 <button type="button" onClick={() => getDetail(form.id)} className="details-button" data-bs-toggle="modal" data-bs-target="#detailsModal" key={form.id}>
                                     <div className="post-container">
                                         <div className="post-details">
+                                            <p className="post-issue"><BugReportSharpIcon style={{ fontSize: '20px' }} />{form.data.Issue}</p>
+                                            <p className={`post-${form.data.PostType === 'Issue' ? 'postIssue' : form.data.PostType === 'Solution' ? 'postSolution' : 'postOthers'}`}>{form.data.PostType}</p>
                                             {form.data.Image && <img className="img-issue" src={form.data.Image} alt="Issue" />}
-                                            <p className="post-issue"><BugReportSharpIcon style={{ fontSize: '20px' }} />{ form.data.Issue }</p>
+                                            <p className="post-description-forum"> {form.data.Description}</p>
                                             <p className="post-deviceModel">Model: { form.data.DeviceModel }</p>
                                             <p className="post-deviceType">Type: {form.data.DeviceType}</p>
-                                            <p className="post-comment-count"><ModeCommentOutlinedIcon style={{ fontSize: '15px', marginRight: '7px' }} />{ form.data.CommentCount } comments</p>
+                                            <div className='post-footer-container'>
+                                            	<p className="post-comment-count"><ModeCommentOutlinedIcon style={{ fontSize: '15px', marginRight: '5px' }} />{ form.data.CommentCount } Comments</p>
+												<p className='post-comment-count' ><BiShare style={{ fontSize: '15px', marginRight: '5px' }} />Share</p>
+												<p className='post-comment-count' ><BiSave style={{ fontSize: '15px', marginRight: '5px' }} />Save</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </button>
                             </div>
                         ))}
+                    </div>
+                    <div className='filter-container'>
+                        placeholder
+                        placeholder
+                        placeholder
+                        placeholder
+                        placeholder
+                        placeholder
+                        placeholder
                     </div>
                 </div>
             </div>

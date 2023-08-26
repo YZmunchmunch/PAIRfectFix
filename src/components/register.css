@@ -1,9 +1,19 @@
+:root {
+    --lightergrey: #e4e7ef;
+    --lightgrey: #97989D;
+    --darkgrey: #6C6C6C;
+    --orange: #F77F00;
+    --white: #FFFFFF;
+    --darkblue: #003049;
+    --lightblue: #DDE4FE;
+}
+
 .login-page {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(245, 245, 245)
+    background-color: rgb(245, 245, 245);
 }
 
 .login-container {
@@ -17,14 +27,13 @@
 }
 
 .left-content {
+    display: flex;
     flex: 1;
     /* Occupy 50% of the container width */
-    padding: 20px;
-    /* Add padding for spacing */
-    text-align: center;
-    /* Center the text horizontally */
-    background-color: rgb(229, 229, 229);
+    justify-content: center;
+    background-color: var(--lightergrey);
     height: fill;
+    border-radius: 10px 0 0 10px;
 }
 
 .right-content {
@@ -32,6 +41,12 @@
     /* Occupy 50% of the container width */
     padding: 20px;
     /* Add padding for spacing */
+    background-color: #f7f9fe;
+    height: fill;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
 }
 
 .login-card {
@@ -47,7 +62,7 @@
     /* Add some padding for spacing */
     background-color: white;
     /* Set the background color to white */
-    border-radius: 5px;
+    border-radius: 10px;
     /* Add rounded corners to the form groups */
     border-style: solid;
     border-color: rgb(245, 245, 245);
@@ -60,8 +75,36 @@
 }
 
 .login-button {
-    background-color: grey;
+    background-color: var(--orange);
     border-style: none;
+    border: var(--orange) solid 2px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
     /* Adjust the shadow properties as needed */
+}
+
+.login-button:hover {
+    background-color: var(--white);
+    color: var(--orange);
+    border: var(--orange) solid 2px;
+    font-weight: 700;
+}
+
+.signup-to-login {
+    text-decoration: none;
+    color: var(--darkgrey);
+}
+
+.signup-to-login:hover {
+    text-decoration: none;
+    color: var(--orange);
+}
+
+.login-title {
+    font-weight: 600;
+    color: var(--darkblue);
+}
+
+.need-account {
+    color: var(--darkblue);
 }

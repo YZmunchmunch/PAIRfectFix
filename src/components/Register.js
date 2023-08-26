@@ -4,6 +4,7 @@ import { auth } from '../firebase'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import './register.css'
+import logo from "../images/Logo.png"
 
 
 export default function Register() {
@@ -40,12 +41,12 @@ export default function Register() {
             <div className="login-page">
                 <div className="login-container">
                     <div className="left-content">
-                    
+                        <img className="main-logo" alt="logo" src={logo} />
                     </div>
                     <div className="right-content">
                         <Card className="login-card">
                             <Card.Body>
-                                <h2 className="text-center mb-4">Register your account</h2>
+                                <h2 className="text-center mb-4 login-title">Register your account</h2>
                                 {error && <Alert variant="danger">{error}</Alert>}
                                 <Form onSubmit={handleSubmit}> 
                                     <Form.Group className="email mt-2" id="email">
@@ -57,12 +58,12 @@ export default function Register() {
                                     <Form.Group className="confirm-password mt-3" id="password-confirm">
                                         <Form.Control className="confirm-password-entry" type="password" ref={passwordConfirmRef} placeholder="Confirm Password" required></Form.Control>
                                     </Form.Group>
-                                    <Button disabled={loading} className="w-100 mt-3 login-button" type="submit">Log In</Button>
+                                    <Button disabled={loading} className="w-100 mt-3 login-button" type="submit">Register</Button>
                                 </Form>
                             </Card.Body>
                         </Card>
-                        <div className="w-100 text-center mt-2">
-                            Need an account? <Link to="/login">Login</Link>
+                        <div className="w-100 text-center mt-2 need-account">
+                            Already have an account? <Link className="signup-to-login" to="/login">Log In</Link>
                         </div>
                     </div>
                 </div>

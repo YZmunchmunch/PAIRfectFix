@@ -1,3 +1,13 @@
+:root {
+    --lightergrey: #e4e7ef;
+    --lightgrey: #97989D;
+    --darkgrey: #6C6C6C;
+    --orange: #F77F00;
+    --white: #FFFFFF;
+    --darkblue: #003049;
+    --lightblue: #DDE4FE;
+}
+
 .post-card {
     display: flex;
     justify-content: center;
@@ -22,7 +32,7 @@
 }
 
 .post-container {
-    
+
     border-radius: 10px;
     width: 800px;
     height: auto;
@@ -31,42 +41,51 @@
 }
 
 .post-details {
-    display: flex; /* Use flexbox to center-align content */
-    flex-direction: column; /* Arrange items vertically */ 
-    align-items: start; /* Center content horizontally */
+    display: flex;
+    /* Use flexbox to center-align content */
+    flex-direction: column;
+    /* Arrange items vertically */
+    align-items: center;
+    /* Center content horizontally */
     margin: 10px;
     background-color: white;
     border-radius: 10px;
-
+    padding: 0.75rem;
 }
 
 #detailsModal .modal-dialog {
-    max-width: 90%; /* Set the maximum width */
-    max-height: 90vh; /* Set the maximum height (viewport height) */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-width: 90%;
+    /* Set the maximum width */
+    max-height: 90vh;
+    /* Set the maximum height (viewport height) */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
 }
 
 .upvote-button {
     border-style: none;
     background-color: rgb(245, 245, 245);
-    
+
 }
 
 .top-bar {
-    display: flex; /* Use Flexbox */
-    align-items: center; /* Vertically center elements */
+    display: flex;
+    /* Use Flexbox */
+    align-items: center;
+    /* Vertically center elements */
     justify-content: center;
     margin-left: 218px;
     position: fixed;
     width: fill;
     height: 60px !important;
     margin-right: 20px;
-    
+
 }
 
 /* Add styles to individual elements within .top-bar as needed */
 .top-bar .element {
-    margin: 0 10px; /* Add horizontal spacing between elements */
+    margin: 0 10px;
+    /* Add horizontal spacing between elements */
 }
 
 .search-icon {
@@ -84,7 +103,7 @@
 .search-input {
     border-radius: 20px;
     border-style: none;
-    
+
 }
 
 .query-button {
@@ -106,36 +125,38 @@
 .forum-container {
     overflow: auto;
 }
+
 .forum-posts {
     margin-top: 100px;
     margin-left: 218px;
-    border-style: double;
     border-radius: 10px;
-    
+    display: flex;
 }
 
 .scrollable-content {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 300px;
+    padding: 1rem;
 }
 
 .img-issue {
     height: 300px;
     width: fill;
     border-radius: 10px;
-    display: flex; /* Use flexbox layout */
+    display: flex;
+    /* Use flexbox layout */
     align-items: center;
     justify-content: center;
-    max-width: 100%; /* Adjust this value if needed */
-    max-height: 300px; /* Set your desired maximum height */
+    max-width: 100%;
+    /* Adjust this value if needed */
+    max-height: 300px;
+    /* Set your desired maximum height */
     width: auto;
     height: auto;
 
 }
 
 .post-issue {
-    display: flex; /* Use flexbox layout */
+    display: flex;
+    /* Use flexbox layout */
     align-items: center;
     font-size: 20px;
     font-weight: bold;
@@ -143,7 +164,8 @@
 }
 
 .post-issue svg {
-    margin-right: 8px; /* Add some spacing between the icon and text */
+    margin-right: 8px;
+    /* Add some spacing between the icon and text */
 }
 
 .post-deviceModel {
@@ -156,6 +178,41 @@
 
 .post-comment-count {
     margin-left: 10px;
-    color: rgb(204, 204, 204);
+    color: var(--darkgrey);
     font-size: 13px;
+}
+
+.post-footer-container {
+    display: flex;
+
+}
+
+
+
+.post-postSolution {
+    margin-top: 10px;
+    margin-left: 14px;
+    background-color: greenyellow;
+    border-radius: 20px;
+    width: 10%;
+}
+
+.post-postIssue {
+    margin-top: 10px;
+    margin-left: 14px;
+    background-color: rgb(255, 133, 19);
+    border-radius: 20px;
+    width: 10%;
+}
+
+.post-postOthers {
+    margin-top: 10px;
+    margin-left: 14px;
+    background-color: rgb(255, 133, 19);
+    border-radius: 20px;
+    width: 10%;
+}
+
+.post-description-forum {
+    margin-left: 10px;
 }

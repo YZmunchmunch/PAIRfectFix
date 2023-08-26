@@ -4,6 +4,7 @@ import { auth } from '../firebase'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useNavigate } from "react-router-dom"
 import './login.css'
+import logo from "../images/Logo.png"
 
 
 
@@ -37,12 +38,12 @@ export default function Login() {
             <div className="login-page">
                 <div className="login-container">
                     <div className="left-content">
-                    
+                        <img className="main-logo" alt="logo" src={logo} />
                     </div>
                     <div className="right-content">
                         <Card className="login-card">
                             <Card.Body>
-                                <h2 className="text-center mb-4">Login to your account</h2>
+                                <h2 className="text-center mb-4 login-title">Login to your account</h2>
                                 {error && <Alert variant="danger">{error}</Alert>}
                                 <Form onSubmit={handleSubmit}> 
                                     <Form.Group className="email mt-2" id="email">
@@ -55,8 +56,8 @@ export default function Login() {
                                 </Form>
                             </Card.Body>
                         </Card>
-                        <div className="w-100 text-center mt-2">
-                            Need an account? <Link to="/register">Sign Up</Link>
+                        <div className="w-100 text-center mt-2 need-account">
+                            Need an account? <Link to="/register" className="login-to-signup">Sign Up</Link>
                         </div>
                     </div>
                 </div>
