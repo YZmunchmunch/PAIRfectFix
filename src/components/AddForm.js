@@ -12,7 +12,7 @@ export default function AddForm() {
     const [description, setDescription] = useState('')
     const [image, setImage] = useState(null);
     const { currentUser } = useAuth()
-    const deviceTypeOptions = ['Laptop', 'Desktop', 'Mobile Device', 'Monitor', 'Speaker', 'TV', 'Headset', 'Earpiece'];
+    const deviceTypeOptions = ['Laptop', 'Desktop', 'Mobile Device', 'Monitor', 'Speaker', 'TV', 'Headset', 'Earpiece', 'Tablet', 'Console', 'SmartWatch'];
     const handleOptionChange = (event) => {
         setDeviceType(event.target.value);
     };

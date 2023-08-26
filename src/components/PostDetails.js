@@ -99,6 +99,8 @@ export default function PostDetails({ id }) {
                 <div className="details-card">
                     {postDetails.Image && <img className="details-img" src={postDetails.Image} alt="Issue" />}
                     <h4 className="details-issue"><BugReportSharpIcon style={{ fontSize: '30px' }} />{postDetails.Issue}</h4>
+                    <p>{postDetails.PostType}</p>
+                    <p>{postDetails.Description}</p>
                     <p className="details-deviceType">Device Type: {postDetails.DeviceType}</p>
                     <p className="details-deviceModel">Device Model: {postDetails.DeviceModel}</p>
                 </div>

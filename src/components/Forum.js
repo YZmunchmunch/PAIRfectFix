@@ -64,7 +64,7 @@ export default function Forum() {
     const [filteredForms, setFilteredForms] = useState([])
     const [error, setError] = useState('')
     // For filtering side bar
-    const deviceTypeOptions = ['Laptop', 'Desktop', 'Mobile Device', 'Monitor', 'Speaker', 'TV', 'Headset', 'Earpiece', 'Console', 'Smartwatch'];
+    const deviceTypeOptions = ['Laptop', 'Desktop', 'Mobile Device', 'Monitor', 'Speaker', 'TV', 'Headset', 'Earpiece', 'Tablet', 'Console', 'Smartwatch'];
     const deviceModelOptions = ['Apple', 'Samsung', 'Google', 'XiaoMi', 'Oppo', 'Razer', 'Dell', 'Acer', 'Prism', 'Ducky'];
     const [filterType, setFilterType] = useState([])
     const [filterBrand, setFilterBrand] = useState([])
