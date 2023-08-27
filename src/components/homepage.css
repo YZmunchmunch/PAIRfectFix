@@ -1,0 +1,66 @@
+:root {
+    --lightergrey: #e4e7ef;
+    --lightgrey: #97989D;
+    --darkgrey: #6C6C6C;
+    --orange: #F77F00;
+    --white: #FFFFFF;
+    --darkblue: #003049;
+    --lightblue: #DDE4FE;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Set the height to 100vh (viewport height) */
+    width: 100%;
+    /* Set the width to 100% to fill the entire width */
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding-top: 800px;
+}
+
+.who-are-we {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+
+.who-are-we-text {
+    padding: 0.5rem;
+    width: 50%;
+}
+
+.repair-stuff {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+
+.what-we-do-text {
+    padding: 1rem;
+    width: 50%;
+}
+
+.home-to-forum-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--orange);
+    border-radius: 1rem;
+    background-color: var(--orange);
+    color: var(--white);
+    font-weight: 700;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.home-to-forum-link {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.footer-image {
+    width: 100%;
+}

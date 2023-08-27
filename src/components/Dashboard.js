@@ -9,8 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import AddForm from './AddForm'
 import HomeIcon from '@mui/icons-material/Home';
+import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import MiscellaneousServicesOutlinedIcon from '@mui/icons-material/MiscellaneousServicesOutlined';
 
 export default function Dashboard() {
 
@@ -66,17 +68,6 @@ export default function Dashboard() {
         console.log(forms)
     }, [forms])
 
-    async function handleLogout() {
-        setError('')
-
-        try {
-            await logout(auth)
-            navigate("/login")
-        } catch {
-            setError('Failed to logout')
-        }
-    }
-
     return (
         <>
             {/* Modal */}
@@ -96,33 +87,40 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="main-container">
                 {/* <strong>Email:</strong> {currentUser.email} */}
                 <button type="button" className="query-button" data-bs-toggle="modal" data-bs-target="#addFormModal">
                     QUERY
                 </button>
-                <div className="main-container">
+                <p className="business-header-container">
+                    <h2 className="business-header">Partnership with Local Electronic Repair Shops</h2>
+                    <p className="business-subheader">"We provide you with the most reliable & convenient repair shops in Singapore"</p>
+                </p>
+                <div className="business-container">
                     {business.map(form => (
-                        <div className="business-card" key={form.id}>
-                            <img className="img" src={form.data.Image} />
-                            <p className="service-type">
-                                {form.data.ServiceType.map((service, index) => (
-                                    <span className="service-type-individual" key={index}>
-                                        #{service}
-                                        {index !== form.data.ServiceType.length - 1 && ' '}
-                                    </span>
-                                ))}
-                            </p>
-                            <div className="business-info">
+                        <div className="business-card-outline">
+                            <div className="business-card" key={form.id}>
+                                <img className="business-img" src={form.data.Image} />
                                 <div className="company-name">
-                                    <HomeIcon className="icon"/>
+                                    <StorefrontOutlinedIcon className="shop-icon"/>
                                     <p>{form.data.CompanyName}</p>
                                 </div>
-                                <div className="address">
-                                    <LocationOnIcon className="icon"/>
-                                    <p>{form.data.Address}</p>
+                                <div className="business-info">
+                                    <p className="service-type">
+                                        <MiscellaneousServicesOutlinedIcon className="service-icon"/>
+                                        {form.data.ServiceType.map((service, index) => (
+                                            <span className="service-type-individual" key={index}>
+                                                {service}
+                                                {index !== form.data.ServiceType.length - 1 && ' '}
+                                            </span>
+                                        ))}
+                                    </p>
+                                    <div className="address">
+                                        <LocationOnIcon className="address-icon"/>
+                                        <p>{form.data.Address}</p>
+                                    </div>
                                 </div>
-                                <p>
+                                <p className ="business-detail-button">
                                     <Link to={`/details/${form.id}`}>
                                         <button className="circle-button"><RemoveRedEyeIcon/></button>
                                     </Link>
@@ -130,9 +128,6 @@ export default function Dashboard() {
                             </div>
                         </div>
                     ))}
-                </div>
-                <div className="w-100 text-center mt-2">
-                    <Button variant="link" onClick={handleLogout}>Log Out</Button>
                 </div>
             </div>
         </>

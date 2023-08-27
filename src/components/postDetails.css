@@ -55,3 +55,41 @@
     height: auto;
     border-radius: 10px;
 }
+
+.details-postDescription {
+    margin-left: 10px;
+}
+
+
+.details-postSolution {
+    background-color: rgb(116, 170, 35);
+    border-radius: 20px;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    font-size: 12px;
+
+}
+
+.details-postIssue {
+    background-color: rgb(255, 133, 19);
+    border-radius: 20px;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    font-size: 12px;
+}
+
+.details-postOthers {
+    background-color: rgb(0, 247, 255);
+    border-radius: 20px;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+}

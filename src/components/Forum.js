@@ -134,22 +134,24 @@ export default function Forum() {
         }));
 
         const filtered = allForms.filter((form) => {
-            // Compare search query to form data (convert to lowercase for case-insensitive search)
-            return (
-                form.data.Issue.toLowerCase().includes(lowercaseSearch) ||
-                form.data.DeviceModel.toLowerCase().includes(lowercaseSearch) ||
-                form.data.DeviceType.toLowerCase().includes(lowercaseSearch) ||
-                form.data.Description.toLowerCase().includes(lowercaseSearch) ||
-                form.data.PostType.toLowerCase().includes(lowercaseSearch)
+            // Split the search query into words
+            const searchWords = lowercaseSearch.split(' ');
+
+            // Check if any of the search words are present in the post
+            return searchWords.some((word) =>
+                form.data.Issue.toLowerCase().includes(word) ||
+                form.data.DeviceModel.toLowerCase().includes(word) ||
+                form.data.DeviceType.toLowerCase().includes(word) ||
+                form.data.Description.toLowerCase().includes(word) ||
+                form.data.PostType.toLowerCase().includes(word)
             );
         })
         .sort((a, b) => {
             // Compare the Upvotes property in descending order
             return b.data.Upvotes - a.data.Upvotes;
         });
-        console.log(filtered)
-        setFilteredForms(filtered); // Update the filtered forms
 
+        setFilteredForms(filtered); // Update the filtered forms
     }
 
     useEffect(() => {
@@ -294,7 +296,10 @@ export default function Forum() {
                 <button type="button" className="query-button" data-bs-toggle="modal" data-bs-target="#addFormModal">
                     Add Post
                 </button>
-                <Button variant="link" className="logout-button" onClick={handleLogout}>Log Out</Button>
+            </div>
+            <div className="forum-header-container">
+                <h2 className="forum-header">Ask Away!</h2>
+                <p className="forum-subheader">Community platform for sharing of knowledge and finding solutions to your problem</p>
             </div>
             <div className="forum-container"> 
                 <div className="forum-posts">

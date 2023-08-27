@@ -24,7 +24,7 @@ export default function Login() {
             setLoading(true)
             await login(auth, emailRef.current.value, passwordRef.current.value)
             // redirect to index
-            navigate("/index");
+            navigate("/home");
 
         } catch (e) {
             console.log(e)

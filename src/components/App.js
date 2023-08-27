@@ -1,17 +1,18 @@
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Index from "./Index";
-import BusinessDashboard from "./BusinessDashboard";
 import BusinessDetails from "./BusinessDetails";
 import Forum from "./Forum";
 import Layout from "./Layout";
 import Dashboard from "./Dashboard";
 import Donation from "./Donation";
+import BusinessDashboard from "./BusinessDashboard"
 import './app.css'
 
 // Import Login and Register components here
 import Login from "./Login";
 import Register from "./Register";
+import HomePage from "./HomePage";
 
 function App() {
   return (
@@ -38,6 +39,22 @@ function App() {
               element={
                 <Layout>
                   <Index />
+                </Layout>
+              }
+            />
+            <Route
+              path="/home"
+              element={
+                <Layout>
+                  <HomePage />
+                </Layout>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <Layout>
+                  <Dashboard />
                 </Layout>
               }
             />

@@ -102,12 +102,19 @@
     align-items: center;
     /* Vertically center elements */
     justify-content: center;
-    margin-left: 218px;
     position: fixed;
-    width: fill;
+    width: 1000px;
     height: 60px !important;
-    margin-right: 20px;
+    margin-top: 200px !important;
+    right: 25%;
 
+}
+
+.forum-header-container {
+    position: fixed;
+    border: 2px solid red;
+    left: 410px;
+    height: 100px;
 }
 
 /* Add styles to individual elements within .top-bar as needed */
@@ -216,13 +223,15 @@
 }
 
 .post-postSolution {
-    background-color: greenyellow;
+    background-color: rgb(116, 170, 35);
     border-radius: 20px;
     width: 20%;
     display: flex;
     justify-content: center;
     margin-left: 8px;
     color: white;
+    font-size: 12px;
+
 }
 
 .post-postIssue {
@@ -233,6 +242,7 @@
     justify-content: center;
     margin-left: 8px;
     color: white;
+    font-size: 12px;
 }
 
 .post-postOthers {
@@ -273,4 +283,21 @@ label {
 .filtered-options-display {
     color: rgb(178, 178, 178);
     font-size: 11px;
+}
+
+.forum-header{
+    padding-top: 93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.forum-subheader {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
 }
