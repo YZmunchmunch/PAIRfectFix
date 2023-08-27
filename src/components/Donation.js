@@ -9,6 +9,7 @@ import AddDonation from './AddDonation';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import donor_halloffame from '../images/donor_halloffame.png';
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
+import BloodtypeOutlinedIcon from '@mui/icons-material/BloodtypeOutlined';
 
 export default function Donation() {
     
@@ -59,9 +60,9 @@ export default function Donation() {
                 <div className="entire-donation-card">
                     <div className="donations-card">
                         <div className="donations-card-header">
-                            <p className="donations-title">Donations</p>
+                            <p className="donations-title"><BloodtypeOutlinedIcon className="donation-icon" />Donations</p>
                             <button type="button" className="donate-button" data-bs-toggle="modal" data-bs-target="#addFormModal">
-                        + Donate
+                        Donate Now
                             </button>
                         </div>
                         <p className="donations-count"><DoneIcon className="tick-icon" style={{ fontSize: '15px' }} />0 donations so far</p>
@@ -92,7 +93,7 @@ export default function Donation() {
                         </table>
                     </div>
                     <div className="donations-hof">
-                        <p className="donations-hof-title"><AutoAwesomeOutlinedIcon />Hall Of Fame</p>
+                        <p className="donations-hof-title"><AutoAwesomeOutlinedIcon className='donations-hof-icon'/>Hall Of Fame</p>
                         <img className="hof-pic" src={donor_halloffame} />
                     </div>
                 </div>

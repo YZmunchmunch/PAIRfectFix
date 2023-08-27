@@ -108,7 +108,7 @@ export default function AddDonation() {
                 </Form.Group>
                 <p className='agreement-text'>I agree that by filling up this, RETECHNIMATE may collect and use my personal information for donation-related and communication purposes in accordance with the Personal Data Protection Act 2012 and our data protection policy</p>
                 <div className='button-container'>
-                    <button className='mt-3 mb-3 donate-form-button'>Submit</button>
+                    <button className='mt-3 mb-3 donate-form-button' style={{ borderRadius: "10px", padding: "3px 7px" }} >Submit</button>
                 </div>
             </Form>
         </div>

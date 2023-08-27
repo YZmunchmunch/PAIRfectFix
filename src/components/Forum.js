@@ -341,6 +341,7 @@ export default function Forum() {
                         ))}
                     </div>
                     <div className='filter-container'>
+                        <p className="filter-container-title"><FilterAltOutlinedIcon className="filter-title-icon"/>Filter</p>
                         <form onSubmit={handleFilterSubmit}>
                             <div className="form-group mt-2">
                                 <label className="filterForm-filterType control-label" htmlFor="filterType">Device Type</label>

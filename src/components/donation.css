@@ -84,11 +84,11 @@
 }
 .top-bar {
     background-color: white;
-    border-radius: 10px;
     height: 100px;
-    margin-left: 215px;
-    box-shadow: 2px 2px 5px lightgray;
     margin-top: 100px;
+    width: fill;
+    margin-right: -75px;
+    padding-right: 10px;
     /* Horizontal and vertical offset are 0, blur radius is 6px */
 }
 
@@ -180,8 +180,16 @@
 }
 
 .donations-hof-title {
-    margin-left: 10px;
-    margin-top: 10px;
+    padding-top: 10px;
+    margin-left: 20px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
+}
+
+.donations-hof-icon {
+    margin-right: 10px;
+}
+
+.donation-icon {
+    margin-right: 10px;
 }
