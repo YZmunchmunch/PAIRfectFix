@@ -2,7 +2,17 @@
 
 * {
     font-family: 'Roboto', sans-serif;
-    
+
+}
+
+:root {
+    --lightergrey: #e4e7ef;
+    --lightgrey: #97989D;
+    --darkgrey: #6C6C6C;
+    --orange: #F77F00;
+    --white: #FFFFFF;
+    --darkblue: #003049;
+    --lightblue: #DDE4FE;
 }
 
 .main-container {
@@ -14,16 +24,15 @@
 .business-container {
     margin-top: 50px;
     display: flex;
-    flex-wrap: wrap; 
-
+    justify-content: space-around;
+    flex: wrap;
+    padding: 10px;
 }
 
 .business-card-outline {
-    background-color: rgb(227, 227, 227);
+    background-color: var(--lightgrey);
     width: 19%;
     height: 350px;
-    margin-top: 40px;
-    margin-left: 40px;
     border-radius: 10px;
 }
 
@@ -32,15 +41,21 @@
     height: fill;
     margin: 10px;
     border-radius: 10px;
+    padding: 3px;
 }
 
 .business-img {
     width: 85%;
     height: 50%;
     border-radius: 10px;
-    display: flex; /* Use flexbox to center-align content */
-    flex-direction: column; /* Arrange items vertically */ 
-    align-items: center; /* Center content horizontally */
+    display: flex;
+    /* Use flexbox to center-align content */
+    flex-direction: column;
+    /* Arrange items vertically */
+    align-items: center;
+    /* Center content horizontally */
+    border: 1px solid var(--darkgrey);
+    margin-left: 20px;
 }
 
 .company-name {
@@ -53,7 +68,7 @@
 }
 
 .service-type {
-    color:grey;
+    color: grey;
     font-size: 13px;
     text-transform: uppercase;
     display: flex;
@@ -97,31 +112,46 @@
 }
 
 .circle-button {
-    border-radius: 50%; /* Set border-radius to 50% to create a circle */
+    border-radius: 50%;
+    /* Set border-radius to 50% to create a circle */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ff7904; /* Optional: Change the background color */
-    color: white; /* Optional: Change the text color */
-    cursor: pointer; /* Optional: Add a cursor pointer for interaction */
-    border: none; /* Optional: Remove button border */
-    outline: none; /* Optional: Remove button outline */
+    background-color: #ff7904;
+    /* Optional: Change the background color */
+    color: white;
+    /* Optional: Change the text color */
+    cursor: pointer;
+    /* Optional: Add a cursor pointer for interaction */
+    border: none;
+    /* Optional: Remove button border */
+    outline: none;
+    /* Optional: Remove button outline */
     margin-bottom: 10px;
     margin-right: 10px;
 }
 
 .query-button {
-    width: 100px; /* Adjust the width to control the size of the circle */
-    height: 40px; /* Should match the width to create a circle */
-    border-radius: 5px; /* Set border-radius to 50% to create a circle */
+    width: 100px;
+    /* Adjust the width to control the size of the circle */
+    height: 40px;
+    /* Should match the width to create a circle */
+    border-radius: 5px;
+    /* Set border-radius to 50% to create a circle */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(253, 180, 127);; /* Optional: Change the background color */
-    color: white; /* Optional: Change the text color */
-    cursor: pointer; /* Optional: Add a cursor pointer for interaction */
-    border: none; /* Optional: Remove button border */
-    outline: none; /* Optional: Remove button outline */
+    background-color: rgb(253, 180, 127);
+    ;
+    /* Optional: Change the background color */
+    color: white;
+    /* Optional: Change the text color */
+    cursor: pointer;
+    /* Optional: Add a cursor pointer for interaction */
+    border: none;
+    /* Optional: Remove button border */
+    outline: none;
+    /* Optional: Remove button outline */
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -142,4 +172,12 @@
     align-items: center;
     font-size: 15px;
 
+}
+
+.business-header-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
 }

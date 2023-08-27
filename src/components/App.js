@@ -13,6 +13,7 @@ import './app.css'
 import Login from "./Login";
 import Register from "./Register";
 import HomePage from "./HomePage";
+import Profile from "./Profile";
 
 function App() {
   return (
@@ -63,6 +64,14 @@ function App() {
               element={
                 <Layout>
                   <BusinessDashboard />
+                </Layout>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <Layout>
+                  <Profile />
                 </Layout>
               }
             />

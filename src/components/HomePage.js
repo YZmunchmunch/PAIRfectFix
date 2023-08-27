@@ -41,8 +41,17 @@ export default function HomePage() {
 								</button>
 							</div>
 						</div>
+						<div>
+							<div className='success-story'>
+								<img className="success-story-image" src="https://media.wired.com/photos/596ff3f9eb889b7135754660/16:9/w_1792,h_1008,c_limit/Photoshop-sketch-SOURCE-Adobe-Feature.jpg" />
+								<div className='success-story-text'>
+									<h2>The Aspiring Designer</h2>
+									<p>Sarah is a 13 year old girl in Hope Secondary School, who dreams of becoming a graphic designer, was able to unleash her creativity with the donated devices. Armed with a tablet, she honed her digital art skills, creating stunning visuals that caught the attention of her teachers and peers. Sarah's success is a shining example of how access to electronics has opened doors to a world of possibilities, helping students explore their passions and interests outside the classroom.</p>
+								</div>
+							</div>
+						</div>
+						<img className="footer-image" src={footerpic} />
 					</div>
-					<img className="footer-image" src={footerpic} />
         </>
     )
 }

@@ -13,6 +13,7 @@ import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import MiscellaneousServicesOutlinedIcon from '@mui/icons-material/MiscellaneousServicesOutlined';
+import AddBusiness from './AddBusiness'
 
 export default function Dashboard() {
 
@@ -79,7 +80,7 @@ export default function Dashboard() {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <AddForm />
+                            <AddBusiness />
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -89,14 +90,11 @@ export default function Dashboard() {
             </div>
             <div className="main-container">
                 {/* <strong>Email:</strong> {currentUser.email} */}
-                <button type="button" className="query-button" data-bs-toggle="modal" data-bs-target="#addFormModal">
-                    QUERY
-                </button>
-                <p className="business-header-container">
-                    <h2 className="business-header">Partnership with Local Electronic Repair Shops</h2>
-                    <p className="business-subheader">"We provide you with the most reliable & convenient repair shops in Singapore"</p>
-                </p>
-                <div className="business-container">
+                <div className="business-header-container">
+                    <h2 className="business-header">Have Any Broken Devices?</h2>
+                    <p className="business-subheader">"We can link you up with businesses around Singapore that can help you repair it or they may be interested in taking your device to be recycled and reused!"</p>
+                </div>
+                <div className="business-container">   
                     {business.map(form => (
                         <div className="business-card-outline">
                             <div className="business-card" key={form.id}>

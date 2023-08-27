@@ -105,16 +105,8 @@
     position: fixed;
     width: 1000px;
     height: 60px !important;
-    margin-top: 200px !important;
+    top: -20px !important;
     right: 25%;
-
-}
-
-.forum-header-container {
-    position: fixed;
-    border: 2px solid red;
-    left: 410px;
-    height: 100px;
 }
 
 /* Add styles to individual elements within .top-bar as needed */
@@ -162,8 +154,8 @@
 }
 
 .forum-posts {
-    margin-top: 100px;
-    margin-left: 218px;
+    margin-top: -20px;
+    margin-left: 168px;
     border-radius: 10px;
 }
 
@@ -175,13 +167,13 @@
     position: fixed;
     display: block;
     justify-content: center;
-    right: 100px;
-    top: 100px;
-    width: 100px;
+    right: 60px;
+    top: 80px;
+    /* width: 140px; */
     background-color: white;
     border-radius: 10px;
     box-shadow: 2px 2px 8px lightgray;
-    width: 14%;
+    width: 17%;
     height: 85%;
     padding-left: 20px;
     overflow: auto;
@@ -266,12 +258,15 @@
 }
 
 label {
-  display: block; /* Ensures each label is on a new line */
+    display: block;
+    /* Ensures each label is on a new line */
 }
 
 .checkbox-custom:checked {
-  background-color: rgb(255, 133, 19); /* Change to the color you want */
-  border-color: rgb(255, 133, 19); /* Change to the color you want */
+    background-color: rgb(255, 133, 19);
+    /* Change to the color you want */
+    border-color: rgb(255, 133, 19);
+    /* Change to the color you want */
 }
 
 .filter-button {
@@ -285,8 +280,7 @@ label {
     font-size: 11px;
 }
 
-.forum-header{
-    padding-top: 93px;
+.forum-header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -295,9 +289,15 @@ label {
 }
 
 .forum-subheader {
-    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 15px;
+}
+
+.forum-header-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    padding-right: 200px;
 }

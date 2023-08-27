@@ -33,6 +33,7 @@
 }
 
 .details-issue svg {
+    margin-top: 10px;
     margin-right: 8px;
     /* Add some spacing between the icon and text */
 }

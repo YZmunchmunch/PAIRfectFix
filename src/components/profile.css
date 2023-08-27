@@ -1,0 +1,15 @@
+:root {
+    --lightergrey: #e4e7ef;
+    --lightgrey: #97989D;
+    --darkgrey: #6C6C6C;
+    --orange: #F77F00;
+    --white: #FFFFFF;
+    --darkblue: #003049;
+    --lightblue: #DDE4FE;
+}
+
+.profile-content {
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+}
